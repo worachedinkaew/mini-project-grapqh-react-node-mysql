@@ -1,0 +1,15 @@
+.header{
+    color: rgb(7, 56, 146);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.table{
+    /* color: rgb(7, 56, 146); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
