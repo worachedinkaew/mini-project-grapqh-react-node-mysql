@@ -49,7 +49,6 @@ function TableAllUser(props) {
 function Users() {
 
   const { error, data } = useQuery(GET_ALL_USER);
-
   const [selectedUser, setSelectedUser] = useState(null);
 
   function onUserOpenClick(theUser) {

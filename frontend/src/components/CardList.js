@@ -7,6 +7,8 @@ function CardContent(props) {
 
   const { article, onCardClick } = props;
 
+  console.log(article);
+
   var style = { 
       backgroundImage: 'url(' + article.image + ')',
   };
@@ -25,7 +27,7 @@ function CardContent(props) {
           <div>
             {(() => {
               if (article.url) {
-                return <a href="/hobbies" >Click</a>;
+                return <a href={article.url} >Click</a>;
               } 
             })()}
           </div>
@@ -52,9 +54,9 @@ function CardList() {
     return <CardContent key={index} article={article} onCardClick={onCardOpenClick} />;
   });
 
-  let  cartView = null;
+  let  cardView = null;
   if(!!selectedCard){
-    cartView = <CardView  article={selectedCard} onBgClick={onCardCloseClick}/>;
+    cardView = <CardView  article={selectedCard} onBgClick={onCardCloseClick}/>;
   }
 
   return (
@@ -62,7 +64,7 @@ function CardList() {
       <div className="card-grid">
         {articleElements}
       </div>
-      {cartView}
+      {cardView}
     </div>
   )    
 }

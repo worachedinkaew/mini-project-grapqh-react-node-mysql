@@ -8,7 +8,14 @@ const articles = [
         title : "Hobbies",
         text : "เราเที่ยวเก่งนะ !!  ถ่ายรูปสวยด้วย !! มั้ง !!",
         image : "https://source.unsplash.com/user/erondu/600x400",
-        url : 'true'
+        url : '/hobbies'
+
+    },
+    {
+        title : "User Data",
+        text : "แสดงรายชื่อผู้ใช้ทั้งหมด",
+        image : "https://source.unsplash.com/user/erondu/600x400",
+        url : '/users'
 
     }
 ];

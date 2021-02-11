@@ -2,7 +2,7 @@ import React from 'react';
 import '../index.css';
 import CardList from "./CardList";
 import Header from './HeaderHome';
-import Users from './Users';
+// import Users from './Users';
 
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
     <div>
       <Header />
       <CardList />
-      <Users />
+      {/* <Users /> */}
     </div>
   );
 }
