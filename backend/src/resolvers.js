@@ -1,24 +1,21 @@
-const books = [
-    {
-        title: 'The Awakening',
-        author: 'Kate Chopin',
-        type: 'A',
-    },
-    {
-        title: 'City of Glass',
-        author: 'Paul Auster',
-        type: 'B',
-    },
-];
+const bcrypt = require('bcryptjs')
 
 const resolvers = {
     Query: {
-        books: () => books,
         async getUserById(root, { id }, { models }) {
             return models.User.findByPk(id)
         },
         async allUser(root, args, { models }) {
             return models.User.findAll()
+        },
+    },
+    Mutation: {
+        async createUser (root, { name, email, password }, { models }) {
+            return models.User.create({
+                name,
+                email,
+                password: await bcrypt.hash(password, 10)
+              })
         },
     },
 };

@@ -26,7 +26,7 @@ function UserById(props) {
 
     return (
         <div className="table">
-            <p>Name : {data.getUserById.name}</p>
+            <p>This Name is : {data.getUserById.name}</p>
         </div>
     );
 }
@@ -35,13 +35,11 @@ function User(props) {
 
     const { userId } = props;
 
-    // const userId = props.match.params.id
-
     return (
         <div>
-            <div className="header">
+            {/* <div className="header">
                 <h1>User Detail</h1>
-            </div>
+            </div> */}
 
             <UserById id={userId} />
         </div>

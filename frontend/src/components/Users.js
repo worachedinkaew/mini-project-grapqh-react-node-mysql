@@ -1,8 +1,10 @@
 import { gql, useQuery } from '@apollo/client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Header from './HeaderUser';
 import User from './User';
+import UserCreate from './UserCreate';
+
 import '../css/Table.css';
 
 const GET_ALL_USER = gql`
@@ -10,22 +12,23 @@ const GET_ALL_USER = gql`
     allUser{
       id
       name
+      email
     }
   }
 `;
 
 function TableAllUser(props) {
 
-  // const { error, data } = useQuery(GET_ALL_USER);
   const { users, onUserClick } = props;
 
   return (
     <div id="users">
-      <table className="table table-hover table-bordered">
+      <table className="table-hover">
         <thead>
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Name</th>
+            <th scope="col">Email</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -36,6 +39,7 @@ function TableAllUser(props) {
                       <tr key = {key} >
                       <td>{item.id}</td>
                       <td>{item.name}</td>
+                      <td>{item.email}</td>
                       <td > <a href="#" onClick={() => {onUserClick(item.id)}}> View</a></td>
                    </tr>
                  )
@@ -60,9 +64,15 @@ function Users() {
     userView = <User  userId={selectedUser} />;
   }
 
+  // useEffect(() => {
+
+  //   console.log('App');
+  // },[]);
+  
   return (
     <div>
       <Header />
+      <UserCreate />
       <div>
         {(() => {
           if (data) {

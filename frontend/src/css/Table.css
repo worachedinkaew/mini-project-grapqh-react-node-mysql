@@ -3,6 +3,9 @@
   border-collapse: collapse;
   width: 100%;
   padding-bottom: 1%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 #users td, #users th {
