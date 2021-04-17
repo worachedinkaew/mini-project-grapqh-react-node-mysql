@@ -30,7 +30,6 @@ function UserCreate() {
         }
     });
     
-
     return (
         <div id="users">
             <form

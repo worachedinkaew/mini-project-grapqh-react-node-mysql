@@ -1,8 +1,5 @@
-// const { gql } = require('apollo-server')
-import { gql } from 'apollo-server'
-
-export default  gql`
-
+export default `
+    
     type User {
         id: Int!
         name: String!

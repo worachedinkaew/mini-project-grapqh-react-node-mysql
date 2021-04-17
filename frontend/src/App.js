@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Link,
   Route,
   Switch,
 } from 'react-router-dom';
@@ -10,7 +9,6 @@ import Home from './components/Home';
 import Hobbies from './components/Hobbies';
 import Users from './components/Users';
 import User from './components/User';
-
 
 export default function App() {
   return (

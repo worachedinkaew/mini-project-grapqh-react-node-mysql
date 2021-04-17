@@ -1,9 +1,19 @@
-const { Sequelize } = require('sequelize');
-const fs = require('fs');
-const path = require('path');
+// const { Sequelize } = require('sequelize');
+// const fs = require('fs');
+// const path = require('path');
+// const basename = path.basename(__filename);
+// const env = process.env.NODE_ENV || 'development';
+// const config = require(__dirname + '/../config/config.json')[env];
+// const db = {};
+
+import Sequelize from "sequelize"
+import fs from "fs"
+import path from "path"
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
+// import config from ""[env];
 const config = require(__dirname + '/../config/config.json')[env];
+
 const db = {};
 
 // const sequelize = new Sequelize('test_db', 'root', 'magento', {
@@ -17,7 +27,7 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
   // sequelize = new Sequelize(config.database, config.username, config.password, config);
-  sequelize = new Sequelize('test_db', 'root', 'magento', {
+  sequelize = new Sequelize('test_db', 'root', 'root', {
       host: "127.0.0.1",
       dialect: 'mysql',
       define: {
@@ -59,4 +69,6 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize;
 
-module.exports = db;
+// module.exports = db;
+
+export default db;

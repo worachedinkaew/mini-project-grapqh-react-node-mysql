@@ -1,6 +1,7 @@
-const bcrypt = require('bcryptjs')
+// const bcrypt = require('bcryptjs')
+import bcrypt from 'bcryptjs'
 
-const resolvers = {
+export default {
     Query: {
         async getUserById(root, { id }, { models }) {
             return models.User.findByPk(id)
@@ -20,4 +21,4 @@ const resolvers = {
     },
 };
 
-module.exports = resolvers;
+// module.exports = resolvers;
